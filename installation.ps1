@@ -15,8 +15,15 @@ Install-WindowsFeature -Name DHCP -IncludeManagementTools
 Get-NetIPConfiguration
 
 <# Adding DHCP server scope #>
-Add-DhcpServerv4Scope -Name DHCPClient -StartRange 10.10.3.1 -EndRange 10.10.3.5 -SubnetMask 255.255.255.0
+Add-DhcpServerv4Scope -Name DHCPClient -StartRange 10.10.4.1 -EndRange 10.10.4.5 -SubnetMask 255.255.255.0
 
+<# To verify the server manager status for Hyper-V #>
+Get-WindowsFeature 
+
+Get-WindowsFeature Hyper-V*
+
+<# Adding Hyper-V tools #>
+Add-WindowsFeature Hyper-V-tools 
 
 
 
