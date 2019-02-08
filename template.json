@@ -277,8 +277,7 @@
           }
         },
         "dependsOn": [
-          "[concat('Microsoft.Network/publicIpAddresses/', parameters('publicIpAddressName'))]",
-          "[concat('Microsoft.Network/virtualNetworks/', parameters('existingVnetName'))]"
+          "[concat('Microsoft.Network/publicIpAddresses/', parameters('publicIpAddressName'))]"
         ]
       },
       {
