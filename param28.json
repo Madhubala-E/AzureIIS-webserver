@@ -6,10 +6,10 @@
             "value": "thursday"
         },
         "resourceSuffix": {
-            "value": "2"
+            "value": "3"
         },
         "location": {
-            "value": "eastus"
+            "value": "eastus2"
         },
         "virtualMachineSize": {
             "value": "Standard_A2"
