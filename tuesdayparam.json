@@ -3,13 +3,13 @@
     "contentVersion": "1.0.0.0",
   "parameters": {
         "resourcePrefix": {
-            "value": "storedisk"
+            "value": "tuesd"
         },
         "resourceSuffix": {
             "value": "1"
         },
         "location": {
-            "value": "eastus"
+            "value": "eastus2"
         },
         "virtualMachineSize": {
             "value": "Standard_A2"

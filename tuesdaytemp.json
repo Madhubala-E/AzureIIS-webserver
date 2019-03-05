@@ -4,7 +4,7 @@
     "parameters": {
         "resourcePrefix": {
             "type": "string",
-            "defaultValue": "storedisk"
+            "defaultValue": "tuesd"
         },
         "resourceSuffix": {
             "type": "string",
@@ -12,7 +12,7 @@
         },
         "location": {
             "type": "string",
-            "defaultValue": "eastus"
+            "defaultValue": "eastus2"
         },
         "virtualMachineSize": {
             "type": "string",
@@ -346,15 +346,18 @@
         },
         {
             "condition": "[equals(parameters('ManagedDisks'), 'No')]",
-            "apiVersion": "2018-07-01",
-            "type": "Microsoft.Storage/storageAccounts",
             "name": "[variables('storageAccountName')]",
-            "location": "[parameters('location')]",            
-            "properties": {},
-            "kind": "[parameters('storageAccountKind')]",
-            "sku": {
-                "name": "[parameters('storageAccountType')]"
-            }
+           "type": "Microsoft.Storage/storageAccounts",
+          "apiVersion": "2018-02-01",
+          "location": "[parameters('location')]",
+          "kind": "StorageV2",
+       "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+    },
+    "properties": {
+        "accessTier": "Hot"
+    }
     },
         {
             "apiVersion": "2015-06-15",
@@ -443,7 +446,7 @@
             }
         },        
         {
-            "condition": "[equals(parameters('enableAvailabilitySet'), 'No')]",
+            "condition": "[equals(parameters('enableAvailabilitySet'), 'Yes')]",
             "type": "Microsoft.Compute/availabilitySets",
             "apiVersion": "2017-03-30",
             "name": "[variables('availabilitySetName')]",
