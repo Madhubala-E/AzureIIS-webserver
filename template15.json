@@ -4,7 +4,7 @@
     "parameters": {
         "resourceGroup": {
             "type": "string",
-            "defaultValue": "friday4"
+            "defaultValue": "friday5"
         },
         "resourcePrefix": {
             "type": "string",
@@ -12,7 +12,7 @@
         },
         "resourceSuffix": {
             "type": "string",
-            "defaultValue": "4"
+            "defaultValue": "5"
         },
         "location": {
             "type": "string",
@@ -256,7 +256,7 @@
                         "name": "[concat(parameters('virtualMachineName'),'_datadisk')]",                                
                         "caching": "None",
                         "createOption": "Empty",
-                        "diskSizeGB": "[int(parameters('dataDiskSize'))]",
+                        "diskSizeGB": 100,
                         "managedDisk": {
                             "storageAccountType": "[parameters('diskType')]"
                         },
@@ -272,7 +272,7 @@
                     "lun": 0,
                     "caching": "ReadWrite",
                     "createOption": "Empty",
-                    "diskSizeGB": "[int(parameters('dataDiskSize'))]",
+                    "diskSizeGB": 100,
                     "vhd": {
                       "uri": "[concat(parameters('storageContainerUri'), parameters('virtualMachineName'), '-datadisk1.vhd')]"
                     }

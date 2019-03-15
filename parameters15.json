@@ -4,13 +4,13 @@
 
     "parameters": {
         "resourceGroup": {
-            "value": "friday4"
+            "value": "friday5"
         },
         "resourcePrefix": {
             "value": "friday"
         },
         "resourceSuffix": {
-            "value": "4"
+            "value": "5"
         },
         "location": {
             "value": "eastus"
@@ -159,7 +159,7 @@
                         "name": "[concat(parameters('virtualMachineName'),'_datadisk')]",                                
                         "caching": "None",
                         "createOption": "Empty",
-                        "diskSizeGB": "[int(parameters('dataDiskSize'))]",
+                        "diskSizeGB": 100,
                         "managedDisk": {
                             "storageAccountType": "[parameters('diskType')]"
                         },
@@ -174,7 +174,7 @@
                     "lun": 0,
                     "caching": "ReadWrite",
                     "createOption": "Empty",
-                    "diskSizeGB": "[int(parameters('dataDiskSize'))]",
+                    "diskSizeGB": 100,
                     "vhd": {
                       "uri": "[concat(parameters('storageContainerUri'), parameters('virtualMachineName'), '-datadisk1.vhd')]"
                     }
